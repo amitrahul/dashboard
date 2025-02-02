@@ -19,7 +19,10 @@ const Dashboard = () => {
       }
     })();
   }, []);
-  console.log("users", users);
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <>
@@ -29,13 +32,8 @@ const Dashboard = () => {
           <h1 className="text-2xl text-center mx-auto mt-16">Loading...</h1>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            {users.map((user) => (
-              <UsersCard
-                key={user.id}
-                name={user.name}
-                email={user.email}
-                userName={user.username}
-              />
+            {filteredUsers.map((user) => (
+              <UsersCard key={user.id} id={user.id} user={user} />
             ))}
           </div>
         )}
