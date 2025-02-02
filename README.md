@@ -92,5 +92,5 @@ A modern, responsive dashboard built with React.js and TailwindCSS, featuring a 
 - 2. Challenge : API data should load efficiently.
 - 2. Solutions : Used axios inside useEffect to fetch data asynchronously.
 
-- 1. Challenge : Filtering should be case-insensitive.
-- 1. Solutions : Used .toLowerCase() to normalize input and user names.
+- 3. Challenge : Filtering should be case-insensitive.
+- 3. Solutions : Used .toLowerCase() to normalize input and user names.
