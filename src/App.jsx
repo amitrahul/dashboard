@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import { ThemeProvider } from "./context/theme";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+
 function App() {
   const [themeMode, setThemeMode] = useState("light");
   const darkTheme = () => {
@@ -17,7 +20,13 @@ function App() {
   }, [themeMode]);
   return (
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
-      <Header />
+      <div className="flex">
+        <Sidebar />
+        <div className="flex-1">
+          <Header />
+          <Footer />
+        </div>
+      </div>
     </ThemeProvider>
   );
 }
